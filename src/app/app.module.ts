@@ -1,3 +1,7 @@
+import { CartService } from './../services/domain/cart.service';
+import { StorageService } from './../services/storage.service';
+import { ErrorInterceptorProvider } from './../interceptors/error-interceptor';
+import { AuthService } from './../services/auth.service';
 import { CategoriaService } from './../services/domain/categoria.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
@@ -29,7 +33,11 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    CategoriaService
+    CategoriaService,
+    ErrorInterceptorProvider,
+    AuthService,
+    StorageService,
+    CartService,
   ]
 })
 export class AppModule {}
