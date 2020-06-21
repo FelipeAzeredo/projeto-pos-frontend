@@ -1,3 +1,5 @@
+import { ImageUtilService } from './../services/image-util.service';
+import { ClienteService } from './../services/domain/cliente.service';
 import { CartService } from './../services/domain/cart.service';
 import { StorageService } from './../services/storage.service';
 import { ErrorInterceptorProvider } from './../interceptors/error-interceptor';
@@ -38,6 +40,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     AuthService,
     StorageService,
     CartService,
+    ClienteService,
+    ImageUtilService
   ]
 })
 export class AppModule {}
