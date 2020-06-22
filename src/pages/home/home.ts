@@ -36,9 +36,9 @@ export class HomePage {
       this.navCtrl.setRoot('CategoriasPage');
     },
     error => {});    
-}
-
   }
+
+  
 
   login() {
     this.auth.authenticate(this.creds)
