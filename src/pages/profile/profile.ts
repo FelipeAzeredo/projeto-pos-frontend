@@ -28,7 +28,7 @@ export class ProfilePage {
     //public camera: Camera,
     public sanitizer: DomSanitizer) {
 
-      this.profileImage = 'assets/imgs/avatar-blank.png';
+      this.profileImage = 'assets/imgs/avatar-blank.jpg';
   }
 
   ionViewDidLoad() {
