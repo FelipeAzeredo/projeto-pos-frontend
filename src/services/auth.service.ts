@@ -1,3 +1,4 @@
+import { Observable } from 'rxjs/Rx';
 import { Injectable } from "@angular/core";
 import { CredenciaisDTO } from "../models/credenciais.dto";
 import { HttpClient } from "@angular/common/http";
@@ -10,21 +11,25 @@ import { CartService } from "./domain/cart.service";
 @Injectable()
 export class AuthService {
 
-    jwtHelper: JwtHelper = new JwtHelper();    
-
+    jwtHelper: JwtHelper = new JwtHelper();  
+    
+    
     constructor(
         public http: HttpClient, 
         public storage: StorageService,
         public cartService: CartService) {
-    }
-    authenticate(creds : CredenciaisDTO) {
-        return this.http.post(
-            `${API_CONFIG.baseUrl}/login`, 
-            creds,
+    }    
+
+    
+    authenticate(creds : CredenciaisDTO) {       
+        return this.http.post(            
+            `${API_CONFIG.baseUrl}/login`,
+            creds,            
             {
-                observe: 'response',
+                observe: 'response',                
                 responseType: 'text'
             });
+        
     }
 
     refreshToken() {
